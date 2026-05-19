@@ -1,0 +1,59 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+#drawio
+.png.bkp
+.dtmp
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# PEP 582; used by e.g. github.com/David-OConnor/pyflow
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.dbtenv
+.env
+.venv
+.vscode
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+
+# Folders
+target/
+dbt_packages/
+logs/
+# Default .gitignore content added by dbt Cloud# you shouldn't commit these into source control
+# these are the default directory names, adjust/add to fit your needs
+target/
+dbt_packages/
+logs/
+# end dbt Cloud content
+dbt_internal_packages/
+
+# Default .gitignore content added by dbt Cloud# you shouldn't commit these into source control
+# these are the default directory names, adjust/add to fit your needs
+target/
+dbt_packages/
+logs/
+# end dbt Cloud content
