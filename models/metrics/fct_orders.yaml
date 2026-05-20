@@ -1,0 +1,41 @@
+models:
+  - name: dim_customers
+    semantic_model:
+      enabled: true
+    agg_time_dimension: most_recent_order_date
+    columns:
+      - name: customer_id
+        entity:
+          type: primary
+          name: customer
+      - name: first_name
+        dimension:
+          type: categorical
+          name: customer_name
+      - name: first_order_date
+        granularity: day
+        dimension:
+          type: time
+      - name: most_recent_order_date
+        granularity: day
+        dimension:
+          type: time
+    metrics:
+      - name: count_lifetime_orders
+        description: Total count of orders per customer.
+        type: simple
+        label: Count Lifetime Orders
+        agg: sum
+        expr: number_of_orders
+      - name: lifetime_spend
+        description: Gross customer lifetime spend inclusive of taxes.
+        type: simple
+        label: Lifetime Spend
+        agg: sum
+        expr: lifetime_value
+      - name: customers_with_orders
+        description: Unique count of customers placing orders.
+        type: simple
+        label: Customers with Orders
+        agg: count_distinct
+        expr: customer_id
