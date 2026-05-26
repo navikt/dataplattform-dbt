@@ -8,10 +8,14 @@ models:
         entity:
           type: primary
           name: customer
+        data_tests:
+          - unique
+          - not_null
       - name: first_name
         dimension:
           type: categorical
           name: customer_name
+      - name: last_name
       - name: first_order_date
         granularity: day
         dimension:
@@ -20,6 +24,9 @@ models:
         granularity: day
         dimension:
           type: time
+      - name: number_of_orders
+        data_tests:
+          - not_null
     metrics:
       - name: count_lifetime_orders
         description: Total count of orders per customer.
